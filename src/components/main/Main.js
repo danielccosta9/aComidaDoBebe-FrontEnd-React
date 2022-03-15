@@ -10,12 +10,12 @@ const Main = () => {
                 <div className='main__title'>
                     <img src={boy} alt='boy'/>
                     <div className='main__greeting'>
-                        <h1>Olá Daniel</h1>
+                        <h1>Olá Responsavel</h1>
                         <p>Bem-vindo ao seu painel</p>
                     </div>
                 </div>
 
-                <div className='main__cards'>
+                {/* <div className='main__cards'>
                     <div className='card'>
                         <i className='fa fa-file-text fa-2x text-lightblue'></i>
                         <div className='card-inner'>
@@ -47,7 +47,7 @@ const Main = () => {
                             <span className='font-bold text-title'>12</span>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 <div className='charts'>
                     <div className='charts__left'>
