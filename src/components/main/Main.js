@@ -10,7 +10,7 @@ const Main = () => {
                 <div className='main__title'>
                     <img src={boy} alt='boy'/>
                     <div className='main__greeting'>
-                        <h1>Olá Responsavel</h1>
+                        <h1>Olá, Responsavel</h1>
                         <p>Bem-vindo ao seu painel</p>
                     </div>
                 </div>
