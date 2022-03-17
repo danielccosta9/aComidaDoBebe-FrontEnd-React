@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import Axios from 'axios';
 
-export default function Usuario() {
-    const url = "http://localhost:8080/usuario";
+export default function Nutricionista() {
+    const url = "http://localhost:8080/nutricionista";
     const [formValue, setformValue] = useState({
         nome: "",
         sobrenome: "",
         email: "",
         senha: "",
-        nascimento: ""
+        nascimento: "",
+        crn: ""
     });
 
     const [data, setData] = useState([]);
@@ -26,7 +27,8 @@ export default function Usuario() {
             sobrenome: formValue.sobrenome,
             email: formValue.email,
             senha: formValue.senha,
-            nascimento: formValue.nascimento
+            nascimento: formValue.nascimento,
+            crn: formValue.crn
         })
         .then(response =>{
             console.log(response)
@@ -35,7 +37,8 @@ export default function Usuario() {
                 sobrenome: "",
                 email: "",
                 senha: "",
-                nascimento: ""
+                nascimento: "",
+                crn: ""
             });
         })
     }
@@ -48,11 +51,11 @@ export default function Usuario() {
     }
 
     const renderTable = () => {
-        return data?.map(usuario => {
+        return data?.map(nutricionist => {
             return (
-                <tr key={usuario.id}>
-                    <td>{usuario.nome}</td>
-                    <td>{usuario.email}</td>
+                <tr key={nutricionist.id}>
+                    <td>{nutricionist.id}</td>
+                    <td>{nutricionist.crn}</td>
                 </tr>
                 )
             }
@@ -97,6 +100,13 @@ export default function Usuario() {
                 value={formValue.nascimento}  />
             </div>
 
+            <div className='form-group'>
+                <label>CRN</label>
+                <input onChange={(event) => handleChange(event)}
+                id='crn' name='crn' type='text' className='form-control'
+                value={formValue.crn}  />
+            </div>
+
             <button type="submit" className="btn btn-dark btn-lg btn-block">Cadastrar</button>
         </form>
 
@@ -104,8 +114,8 @@ export default function Usuario() {
             <table className="table table-striped">
                 <thead>
                     <tr>
-                    <th scope="row">Nome</th>
-                    <th scope="row">E-mail</th>
+                    <th scope="row">Id</th>
+                    <th scope="row">CRN</th>
                     </tr>
                 </thead>
                 <tbody>{renderTable()}</tbody>

@@ -15,7 +15,6 @@ export default function Ingrediente(){
         Axios.get(url)
         .then(json => setData(json.data))
     }, [])
-
     console.log(data);
 
     function submit(event){
@@ -25,7 +24,7 @@ export default function Ingrediente(){
             grupo_nutricional: formValue.grupo_nutricional
         })
         .then(response =>{
-            console.log(response.formValue)
+            console.log(response)
             setformValue({
                 nome: "",
                 grupo_nutricional: ""
@@ -41,11 +40,11 @@ export default function Ingrediente(){
     }
 
     const renderTable = () => {
-        return data?.map(user => {
+        return data?.map(infrediente => {
             return (
-                <tr key={user.id}>
-                    <td>{user.nome}</td>
-                    <td>{user.grupo_nutricional}</td>
+                <tr key={infrediente.id}>
+                    <td>{infrediente.nome}</td>
+                    <td>{infrediente.grupo_nutricional}</td>
                 </tr>
                 )
             }
@@ -54,23 +53,25 @@ export default function Ingrediente(){
     
     return (
         <>
-        <form onSubmit={(event) => submit(event)}> 
-            <div className="form-group">
-                <label>Nome</label>
-                <input onChange={(event) => handleChange(event)}
-                id="nome" name="nome" type="text" className="form-control" 
-                value={formValue.nome} placeholder="Nome do alimento"/>
-            </div>
-            
-            <div className="form-group">
-                <label>Grupo nutricional</label>
-                <input onChange={(event) => handleChange(event)}
-                id="grupo_nutricional" name="grupo_nutricional" type="text" className="form-control" 
-                value={formValue.grupo_nutricional} placeholder="Grupo nutricional"/>
-            </div>
+        <div>
+            <form onSubmit={(event) => submit(event)}> 
+                <div className="form-group">
+                    <label>Nome</label>
+                    <input onChange={(event) => handleChange(event)}
+                    id="nome" name="nome" type="text" className="form-control" 
+                    value={formValue.nome} placeholder="Nome do alimento"/>
+                </div>
+                
+                <div className="form-group">
+                    <label>Grupo nutricional</label>
+                    <input onChange={(event) => handleChange(event)}
+                    id="grupo_nutricional" name="grupo_nutricional" type="text" className="form-control" 
+                    value={formValue.grupo_nutricional} placeholder="Grupo nutricional"/>
+                </div>
 
-            <button type="submit" className="btn btn-dark btn-lg btn-block">Cadastrar</button>
-        </form>
+                <button type="submit" className="btn btn-dark btn-lg btn-block">Cadastrar</button>
+            </form>
+        </div>
 
         <div>
             <table className="table table-striped">
