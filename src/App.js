@@ -4,10 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 
-import Main from './components/main/Main'
-import Home from './components/home/Home'
-import Usuario from './components/cadastroUsuario/Usuario';
-import Ingrediente from './components/cadastroIngrediente/Ingrediente';
+import Main from './components/Main/Main'
+import Home from './components/Home/Home'
+import Usuario from './components/CadastroUsuario/Usuario';
+import Ingrediente from './components/CadastroIngrediente/Ingrediente';
 import Nutricionista from './components/CadastroNutricionista/Nutricionista';
 
 const App = () => {

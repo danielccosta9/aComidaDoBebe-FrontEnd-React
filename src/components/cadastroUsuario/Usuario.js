@@ -54,6 +54,8 @@ export default function Usuario() {
             return (
                 <tr key={usuario.id}>
                     <td>{usuario.nome}</td>
+                    <td>{usuario.sobrenome}</td>
+                    <td>{usuario.nascimento}</td>
                     <td>{usuario.email}</td>
                 </tr>
                 )
@@ -104,6 +106,8 @@ export default function Usuario() {
                 <thead>
                     <tr>
                     <th scope="row">Nome</th>
+                    <th scope="row">Sobrenome</th>
+                    <th scope="row">Nascimento</th>
                     <th scope="row">E-mail</th>
                     </tr>
                 </thead>
