@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import Axios from 'axios';
 
+import './Ingre.css'
+
 export default function Ingrediente(){
 
     const url = "http://localhost:8080/ingrediente";
@@ -55,21 +57,19 @@ export default function Ingrediente(){
         <>
         <div>
             <form onSubmit={(event) => submit(event)}> 
-                <div className="form-group">
+                <div className="form-group top grid-container grid-item">
                     <label>Nome</label>
                     <input onChange={(event) => handleChange(event)}
                     id="nome" name="nome" type="text" className="form-control" 
                     value={formValue.nome} placeholder="Nome do alimento"/>
-                </div>
-                
-                <div className="form-group">
+
                     <label>Grupo nutricional</label>
                     <input onChange={(event) => handleChange(event)}
                     id="grupo_nutricional" name="grupo_nutricional" type="text" className="form-control" 
                     value={formValue.grupo_nutricional} placeholder="Grupo nutricional"/>
                 </div>
 
-                <button type="submit" className="btn btn-dark btn-lg btn-block">Cadastrar</button>
+                <button type="submit" className="btn btn-dark btn-lg btn-block top">Cadastrar</button>
             </form>
         </div>
 

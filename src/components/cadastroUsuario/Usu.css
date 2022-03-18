@@ -1,0 +1,15 @@
+.top{
+    margin-top: 1.8em;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 1px;
+  }
+.grid-item {
+    border: 1px solid #94939344;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+  }
