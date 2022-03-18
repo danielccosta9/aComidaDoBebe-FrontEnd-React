@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import Axios from 'axios';
 
+import './Usu.css';
+
 export default function Usuario() {
     const url = "http://localhost:8080/usuario";
     const [formValue, setformValue] = useState({
@@ -62,42 +64,39 @@ export default function Usuario() {
     return (
         <>
         <form onSubmit={(event) => submit(event)}>
-            <div className='form-group'>
+            <div className='form-group top grid-container grid-item'>
                 <label>Nome</label>
                 <input onChange={(event) => handleChange(event)}
                 id='nome' name='nome' type='text' className='form-control' 
                 value={formValue.nome} placeholder='Nome do usuário' />
-            </div>
 
-            <div className='form-group'>
                 <label>Sobrenome</label>
                 <input onChange={(event) => handleChange(event)}
                 id='sobrenome' name='sobrenome' type='text' className='form-control' 
                 value={formValue.sobrenome} placeholder='Sobrenome' />
             </div>
 
-            <div className='form-group'>
+
+            <div className='form-group top grid-container grid-item'>
                 <label>E-mail</label>
                 <input onChange={(event) => handleChange(event)}
                 id='email' name='email' type='email' className='form-control' 
                 value={formValue.email} placeholder='E-mail' />
-            </div>
 
-            <div className='form-group'>
                 <label>Senha</label>
                 <input onChange={(event) => handleChange(event)}
                 id='senha' name='senha' type='password' className='form-control' 
                 value={formValue.senha} placeholder='Digite sua senha' />
             </div>
 
-            <div className='form-group'>
+            <div className='form-group top grid-container grid-item'>
                 <label>Data de nascimento</label>
                 <input onChange={(event) => handleChange(event)}
                 id='nascimento' name='nascimento' type='date' className='form-control'
                 value={formValue.nascimento}  />
             </div>
 
-            <button type="submit" className="btn btn-dark btn-lg btn-block">Cadastrar</button>
+            <button type="submit" className="btn btn-dark btn-lg btn-block top">Cadastrar</button>
         </form>
 
         <div>
