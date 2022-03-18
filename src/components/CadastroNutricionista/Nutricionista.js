@@ -55,8 +55,11 @@ export default function Nutricionista() {
         return data?.map(nutricionist => {
             return (
                 <tr key={nutricionist.id}>
-                    <td>{nutricionist.id}</td>
+                    <td>{nutricionist.nome}</td>
+                    <td>{nutricionist.sobrenome}</td>
                     <td>{nutricionist.crn}</td>
+                    <td>{nutricionist.nascimento}</td>
+                    <td>{nutricionist.email}</td>
                 </tr>
                 )
             }
@@ -110,8 +113,11 @@ export default function Nutricionista() {
                 <table className="table table-striped">
                     <thead>
                         <tr>
-                        <th scope="row">Id</th>
+                        <th scope="row">Nome</th>
+                        <th scope="row">Sobrenome</th>
                         <th scope="row">CRN</th>
+                        <th scope="row">Nascimento</th>
+                        <th scope="row">E-mail</th>
                         </tr>
                     </thead>
                     <tbody>{renderTable()}</tbody>
